@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="icon" type="image/x-icon" href="assets/images/music.png">
+	<title>Edit an Album</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/Main.css" type="text/css">
+</head>
+<body class="khaki">
+	<div class="col-xs-1 text-center">
+		<div>
+			<h1 class="makeKarla">Edit</h1>
+			<hr>
+		</div>
+		<div>
+			<button type="button" class="btn btn-primary"><a href="index.html">Back to index</a></button>
+			<button class="btn btn-warning" onclick="window.location.href = `detail.html?index=${getAllUrlParams().index}`">Back to album</button>
+		</div>
+		<div id="loading">Loading album...</div>
+		<form>
+			<div>
+				<label>Band</label><br />
+				<input name="band" type="text" /><br />
+			</div>
+			<br />
+			<div>
+				<label>Album Name</label><br />
+				<input name="album" type="text" /><br />
+			</div>
+			<br />
+			<div>
+				<label>Genre</label><br />
+				<input name="genre" type="text" /><br />
+			</div>
+			<br />
+			<div>
+				<label>Year</label><br />
+				<input name="year" type="number" /><br />
+			</div>
+			<br />
+			<div>
+				<label>Label</label><br />
+				<input name="label" type="text" /><br />
+			</div>
+			<br />
+			<div>
+				<label>Description</label><br />
+				<textarea name="description" rows="5"></textarea><br />
+			</div>
+			<br />
+			<button type="submit">Edit Album</button>
+		</form>
+	</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="assets/api.js"></script>
+<script src="assets/database.js"></script>
+<script src="assets/getAllURLParams.js"></script>
+<script src="app.js"></script>
+<script>
+	albums.update(getAllUrlParams().index);
+</script>
+</body>
+</html>

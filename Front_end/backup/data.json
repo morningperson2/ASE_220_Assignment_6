@@ -1,0 +1,96 @@
+[
+	{
+	  "band": "Test band",
+	  "album": "Test Album",
+	  "genre": "Test genre",
+	  "year": "2023",
+	  "label": "Me",
+	  "description": "Here is a description of the album",
+	  "reviews": [
+		{
+		  "name": "Paul",
+		  "text": "Here is a test review of this album"
+		},
+		{
+		  "name": "Paul",
+		  "text": "Here is another review"
+		}
+	  ]
+	},
+	{
+	  "band": "Wings",
+	  "album": "Band on the Run",
+	  "genre": "Rock",
+	  "year": "1973",
+	  "label": "Apple",
+	  "description": "Band on the Run is the third studio album by the British–American rock band Paul McCartney and Wings, released in December 1973. It was McCartney's fifth album after leaving the Beatles in April 1970. Although sales were modest initially, its commercial performance was aided by two hit singles – \"Jet\" and \"Band on the Run\" – such that it became the top-selling studio album of 1974 in the United Kingdom and Australia, in addition to revitalising McCartney's critical standing. It remains McCartney's most successful album and the most celebrated of his post-Beatles works."
+	},
+	{
+	  "band": "Marvin Gaye",
+	  "album": "What's Going On",
+	  "genre": "R&B",
+	  "year": "1971",
+	  "label": "Tamla",
+	  "description": "What's Going On is the eleventh studio album by American soul singer Marvin Gaye. It was released on May 21, 1971, by the Motown Records subsidiary label Tamla. Recorded between 1970 and 1971 in sessions at Hitsville U.S.A., Golden World, and United Sound Studios in Detroit, and at The Sound Factory in West Hollywood, California, it was Gaye's first album to credit him as a producer and to credit Motown's in-house studio band, the session musicians known as the Funk Brothers.",
+	  "reviews": [
+		{
+		  "name": "Real Person",
+		  "text": "Pretty good imo"
+		}
+	  ]
+	},
+	{
+	  "band": "the Beach Boys",
+	  "album": "Pet Sounds",
+	  "genre": "Pop",
+	  "year": "1966",
+	  "label": "Capitol",
+	  "description": "Pet Sounds is the eleventh studio album by the American rock band the Beach Boys, released on May 16, 1966 by Capitol Records. It was initially met with a lukewarm critical and commercial response in the United States, peaking at number 10 on the Billboard Top LPs chart. In the United Kingdom, the album was lauded by critics and reached number 2 on the Record Retailer chart, remaining in the top ten for six months. Promoted there as \"the most progressive pop album ever\", Pet Sounds was recognized for its ambitious production, sophisticated music, and emotional lyrics. It is considered to be among the greatest and most influential albums in music history.[1]\n\nThe album was produced, arranged, and almost entirely composed by Brian Wilson with guest lyricist Tony Asher. It was recorded largely between January and April 1966, a year after Wilson had quit touring with his bandmates and debuted a more progressive sound with The Beach Boys Today!. Wilson viewed Pet Sounds as effectively a solo album and credited part of its inspiration to marijuana and a newfound spiritual enlightenment. Galvanized by the work of his idol Phil Spector and rival group the Beatles, his goal was to create \"the greatest rock album ever made\", one without filler. An early concept album, it consists mainly of introspective and semi-autobiographical songs like \"You Still Believe in Me\", about a lover's unwavering loyalty, \"I Know There's an Answer\", a critique of LSD users, and \"I Just Wasn't Made for These Times\", about social alienation."
+	},
+	{
+	  "band": "Joni Mitchell",
+	  "album": "Blue",
+	  "genre": "Folk",
+	  "year": "1971",
+	  "label": "Reprise",
+	  "description": "Blue is the fourth studio album by Canadian singer-songwriter Joni Mitchell, released on June 22, 1971, by Reprise Records. Written and produced entirely by Mitchell, it was recorded in 1971 at A&M Studios in Hollywood, California. Created just after her breakup with Graham Nash and during an intense relationship with James Taylor, Blue explores various facets of relationships from love on \"A Case of You\" to insecurity on \"This Flight Tonight\". The songs feature simple accompaniments on piano, guitar and Appalachian dulcimer. The album peaked at number 3 on the UK Albums Chart, number 9 on the Canadian RPM Albums Chart and number 15 on the Billboard 200."
+	},
+	{
+	  "band": "Stevie Wonder",
+	  "album": "Songs in the Key of Life",
+	  "genre": "R&B",
+	  "year": "1976",
+	  "label": "Tamla",
+	  "description": "Songs in the Key of Life is the eighteenth studio album by American singer, songwriter and musician Stevie Wonder. A double album, it was released on September 28, 1976, by Tamla Records, a division of Motown. It was recorded primarily at Crystal Sound studio in Hollywood, with some sessions recorded at the Record Plant in Hollywood, the Record Plant in Sausalito, and The Hit Factory in New York City; final mixing was conducted at Crystal Sound.[5] The album has been regarded by music journalists as the culmination of Wonder's \"classic period\" of recording."
+	},
+	{
+	  "band": "the Beatles",
+	  "album": "Abbey Road",
+	  "genre": "Rock",
+	  "year": "1969",
+	  "label": "Apple",
+	  "description": "Abbey Road is the eleventh and final recorded studio album by the English rock band the Beatles. It was the last album the group started recording,[2] although Let It Be was the last album completed before the band's break-up in April 1970.[3] It was mostly recorded in April, July and August 1969, and was released on 26 September 1969 in the United Kingdom, and 1 October 1969 in the United States, reaching number one in both countries. A double A-side single from the album, \"Something\" / \"Come Together\" was released in October, which also topped the charts in the US.",
+	  "reviews": [
+		{
+		  "name": "New person",
+		  "text": "8/10"
+		}
+	  ]
+	},
+	{
+	  "band": "Adele",
+	  "album": "30",
+	  "genre": "Pop/R&B",
+	  "year": "2022",
+	  "label": "Columbia",
+	  "description": "Once again, Adele transforms her heartbreak into a searching, graceful, and incredibly moving album. But the complexity of her emotions and the nuanced production make this her most ambitious work to date."
+	},
+	{
+	  "band": "Michael Jackson",
+	  "album": "Thriller",
+	  "genre": "Pop/R&B",
+	  "year": "1982",
+	  "label": "Epic",
+	  "description": "The biggest-selling album of all time returns on a gold-plated 25th edition that reminds us of its frequent briliance and adds both a DVD and bonus tracks featuring Kanye West, Akon, will.i.am, and Fergie.\n"
+	}
+  ]

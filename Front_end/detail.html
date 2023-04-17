@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/Main.css" type="text/css">
+</head>
+<body class="khaki">
+<div class="col-xs-1 text-center">
+    <h1 class="makeKarla">Details</h1>
+    <hr>
+    <button type="button" class="btn btn-primary"><a href="index.html">Back to index</a></button> | <button type="button" class="btn btn-warning"><a id="btn-edit" href="">Edit album</a></button> | <button type="button" class="btn btn-info"><a id="btn-review" href="">Write Review</a></button> | <button type="button" class="btn btn-danger" id="btn-delete">Delete album</button>
+    <div id="loading">Loading album...</div>
+    <div id="album">
+        
+        <p><strong>Album: </strong><span id="album-text"></span></p>
+        <p><strong>Band: </strong><span id="album-band"></span></p>
+        <p><strong>Genre: </strong> <span id="album-genre"></span></p>
+        <p><strong>Year: </strong> <span id="album-year"></span></p>
+        <p><strong>Label: </strong> <span id="album-label"></span></p>
+        <p><strong>Description: </strong> <span id="album-description"></span></p>
+        <hr />
+    </div>
+
+    <h2 class="makeKarla">Reviews</h2>
+    <div id="reviews"></div> <!-- new div for reviews -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="assets/api.js"></script>
+    <script src="assets/database.js"></script>
+    <script src="assets/getAllURLParams.js"></script>
+    <script src="app.js"></script>
+    <script>
+        albums.detail(getAllUrlParams().index);
+    </script>
+</div>
+</body>
+</html>

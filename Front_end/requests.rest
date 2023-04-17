@@ -1,0 +1,20 @@
+### GET REQUEST
+GET https://jsonblob.com/api/jsonBlob/1082851103720357888
+
+### POST REQUEST
+POST https://jsonblob.com/api/jsonBlob/
+content-type: application/json
+
+{"test":"xxxxxxxxxxxxxxxxxxxxxxxxx"}
+
+
+### PUT REQUEST
+PUT http://localhost:8080
+content-type: application/json
+
+{
+	"hello":{"world"}
+}
+
+### DELETE REQUEST
+DELETE http://localhost:8080/1680111683832

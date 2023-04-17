@@ -1,0 +1,55 @@
+.khaki {
+    background-color: #B7AD99;
+}
+
+.folly {
+    background-color: #FF4365;
+}
+
+.oxfordBlue {
+    background-color: #0E1428;
+}
+
+.turquoise {
+    background-color: #00D9C0;
+}
+
+.englishViolet {
+    background-color: #5C415D;
+}
+
+.justifyCenter {
+    justify-content: center;
+}
+
+.makeFlex {
+    display: flex;
+    width: 100%;
+}
+
+.oxfordBlueBorder {
+    border-color: #0E1428;
+}
+
+/* FONT */
+@font-face {
+    font-family: "Karla";
+    src: url(Karla/Karla-VariableFont_wght.ttf);
+}
+
+.makeKarla {
+    font-family: Karla;
+}
+
+.white{
+    color: white;
+}
+
+.removehyperlink{
+    text-decoration: none;
+}
+/* a */
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
