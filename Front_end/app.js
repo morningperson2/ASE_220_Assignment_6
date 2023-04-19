@@ -97,7 +97,7 @@ const albums={
 			});
 		});
 	},
-	review: function(index) {
+	review:function(index) {
 		database.detail(albums.documentID, index, function(item) {
 		  console.log(item); // Log the entire 'item' object to the console
 	  
