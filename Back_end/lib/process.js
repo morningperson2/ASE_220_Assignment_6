@@ -13,11 +13,11 @@ function process(req,res){
   console.log(timestamp);
 
   //Write something in the header of the response 
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
-  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, POST, DELETE');
-  res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
-  res.writeHead(200,{'Content-Type':'application/json'});
+  //res.setHeader('Access-Control-Allow-Origin', '*');
+  //res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  //res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET, PUT, POST, DELETE');
+  //res.setHeader('Access-Control-Max-Age', 2592000); // 30 days
+  //res.writeHead(200,{'Content-Type':'application/json'});
 
   //Check the request method and call the appropriate function
   switch(req.method){
@@ -131,23 +131,40 @@ async function PUT(req, res){
 	}
   }
 
-function DELETE(req, res){
-	//check if file exists
-	let myfile=req.url.split('/')[2]+'.json';
-	if(fs.existsSync(`./data/${myfile}`)){
-		console.log(fs.existsSync(`./data/${myfile}`));
-	
+async function DELETE(req, res){
+	//Parse requested object ID to be deleted from URL endpoint
+	const urlParts = req.url.split('/');
+	const index = urlParts[2];
 
-		//delete file
-		fs.writeFileSync(`./data/${myfile}`,'');
-		fs.unlinkSync(`./data/${myfile}`);
+	try {
+		//attempt a connection
+		await client.connect;
 
-		//respond with success message
-		res.end("SUCCESS");
-	}
-	else{
-		//respond with error message
-		res.end("File not found");
+		//refer to our collection
+		const collection = client.db("Assignment_6").collection("Albums");
+
+		//delete requested document
+		const result = await collection.updateOne({}, { $unset: { [`Data.${index}`]: 1 } });
+
+		//if statement to test the results and return a success/error code
+		if (result.modifiedCount === 1) {
+			res.writeHead(200);
+			res.write(`Object ${index} successfully deleted`);
+			console.log(`Delete of index ${index} performed successfully`)
+		} else {
+			res.writeHead(404);
+			res.write(`Index ${index} not found`);
+			console.log(`Requested delete of index ${index} not found`)
+		}
+	}	catch (err) {
+		//console error if error
+		console.error(err);
+		res.writeHead(500);
+		res.write("Unexpected error")
+	}	finally {
+		// Close the connection
+		await client.close();
+		res.end();
 	}
 }
 module.exports=process;
