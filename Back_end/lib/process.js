@@ -59,38 +59,43 @@ async function GET(req, res) {
 
 
 //POST request using MongoDB
-function POST(req, res, timestamp){
-	//generate unique name for file
-	let myFile=`${timestamp}.json`;
+async function POST(req, res) {
+	let body = '';
 
-	//create file
-	fs.appendFile(`./data/${myFile}`, '', function (err) {
-		if (err) throw err;
-	  });
-	//read data from request
-	var body=[];
-
-	req.on('data',(chunk)=>{
-		body.push(chunk);
-	}).on('end',()=>{
-		body=Buffer.concat(body).toString();
-
-		console.log(body);
-		res.write(body);
-		try {
-			let data = JSON.parse(body);
-			//write data to file in json format
-			fs.writeFileSync(`./data/${myFile}`,JSON.stringify(data));
-			//respond with name of file
-			res.write('\n'+myFile);
-			console.log(myFile);
-			res.end();
-		} catch (error) {
-			console.error(error);
-			res.end("Invalid JSON input");
-		}
+	req.on('data', chunk => {
+		body += chunk.toString();
 	});
+	req.on('end', () => {
+			try {
+				const collection = client.db("Assignment_6").collection("Albums");
 
+				const post = JSON.parse(body);
+
+				const update = { $push: { Data: { $each: [post] } } };
+
+				collection.updateOne({}, update, (err, result) => {
+					if (err) {
+						console.log(err);
+						res.writeHead(500);
+						res.write("Unexpected error");
+					} else if (result.modifiedCount === 0) {
+						res.writeHead(404);
+						console.log(`Requested data submission does not have a file to go to`);
+						res.write(`Requested data submission does not have a file to go to`);
+					} else {
+						res.writeHead(200);
+						console.log(`Data submission performed successfully`);
+						res.write(`Data submission performed successfully`);
+						res.end();
+					}
+				})
+			} catch (err) {
+				console.log(err);
+			}	finally {
+				res.end();
+			}
+		}
+	)
 }
 
 async function PUT(req, res){
@@ -132,7 +137,7 @@ async function PUT(req, res){
   }
 
 async function DELETE(req, res){
-	//Parse requested object ID to be deleted from URL endpoint
+	//Parse requested object index to be deleted from URL endpoint
 	const urlParts = req.url.split('/');
 	const index = urlParts[2];
 
@@ -150,20 +155,20 @@ async function DELETE(req, res){
 		if (result.modifiedCount === 1) {
 			res.writeHead(200);
 			res.write(`Object ${index} successfully deleted`);
-			console.log(`Delete of index ${index} performed successfully`)
+			console.log(`Delete of index ${index} performed successfully`);
 		} else {
 			res.writeHead(404);
 			res.write(`Index ${index} not found`);
-			console.log(`Requested delete of index ${index} not found`)
+			console.log(`Requested delete of index ${index} not found`);
 		}
 	}	catch (err) {
 		//console error if error
-		console.error(err);
+		console.log(err);
 		res.writeHead(500);
 		res.write("Unexpected error")
 	}	finally {
 		// Close the connection
-		await client.close();
+		//await client.close();
 		res.end();
 	}
 }

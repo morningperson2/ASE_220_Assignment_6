@@ -6,7 +6,32 @@ GET http://localhost:8080/api/
 POST http://localhost:8080/api/
 content-type: application/json
 
-{"test":"xxxxxxxxxxxxxxxxxxxxxxxxx"}
+{
+  "album": "Test Album",
+  "genre": "Test genre",
+  "year": "2023",
+  "label": "Me",
+  "description": "Here is a description of the album",
+  "reviews": [
+    {
+      "name": "Paul",
+      "text": "Here is a test review of this album"
+    },
+    {
+      "name": "Paul",
+      "text": "Here is another review"
+    },
+    {
+      "name": "name",
+      "text": "sasdfdbvn"
+    },
+    {
+      "name": "qwefrgf",
+      "text": "hgbfvdc"
+    }
+  ],
+  "band": "Test band"
+}
 
 
 ### PUT REQUEST
@@ -19,4 +44,4 @@ content-type: application/json
 }
 
 ### DELETE REQUEST
-DELETE http://localhost:8080/api/
+DELETE http://localhost:8080/api/12
